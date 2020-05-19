@@ -1,0 +1,12 @@
+body {
+    background: white;
+    font-family: 'JackPirate';
+}
+
+@font-face {
+    font-family: "JackPirate";
+    src: url("fonts/JackPirate/jackpirate_personal_use_only-webfont.eot");
+    src: url("fonts/JackPirate/jackpirate_personal_use_only-webfont.woff") format("woff"),
+    src: url("fonts/JackPirate/jackpirate_personal_use_only-webfont.woff2") format("woff2"),
+    url(".otf") format("opentype"),
+}
