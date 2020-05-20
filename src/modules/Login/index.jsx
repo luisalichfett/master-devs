@@ -1,8 +1,9 @@
 import React from 'react';
+import './index.css';
 
 const Login = () => (
-    <div>
-        <h1>ola</h1>
+    <div className="title">
+        Login
     </div>
 );
 

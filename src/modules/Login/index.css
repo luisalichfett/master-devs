@@ -3,10 +3,23 @@ body {
     font-family: 'JackPirate';
 }
 
-@font-face {
-    font-family: "JackPirate";
-    src: url("fonts/JackPirate/jackpirate_personal_use_only-webfont.eot");
-    src: url("fonts/JackPirate/jackpirate_personal_use_only-webfont.woff") format("woff"),
-    src: url("fonts/JackPirate/jackpirate_personal_use_only-webfont.woff2") format("woff2"),
-    url(".otf") format("opentype"),
+.title {
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;;
 }
+
+@font-face {
+    font-family: 'JackPirate';
+    src: url('../../fonts/JackPirate/jackpirate_personal_use_only-webfont.eot');
+    src: url('../../fonts/JackPirate/jackpirate_personal_use_only-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/JackPirate/jackpirate_personal_use_only-webfont.woff2') format('woff2'),
+         url('../../fonts/JackPirate/jackpirate_personal_use_only-webfont.woff') format('woff'),
+         url('../../fonts/JackPirate/jackpirate_personal_use_only-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
