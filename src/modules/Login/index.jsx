@@ -1,9 +1,10 @@
 import React from 'react';
+import Text from '../../core/components/Text';
 import './index.css';
 
 const Login = () => (
     <div className="title">
-        Login
+        <Text.h1 text="Login" color="blue" />
     </div>
 );
 
