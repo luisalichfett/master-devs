@@ -8,7 +8,7 @@ const Login = () => {
     return (
         <div className="content">
             <Text.h1 text="Login" />
-            <Input label="Username" name="username" maxLenght="10" />
+            <Input label="username:" name="username" maxLenght="10" />
         </div>
     )
 };
