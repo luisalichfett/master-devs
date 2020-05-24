@@ -1,13 +1,19 @@
 body {
-    background: white;
+    background: url("../../core/assets/img/6b751c9fa9e98d1b8330e9b4c9178158.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 580px;
 }
 
-.title {
+.content {
     margin-top: 20%;
+    line-height: 2px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 60px;;
+    font-size: 60px;
+    color: white;
 }
 
 

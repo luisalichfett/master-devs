@@ -1,19 +1,26 @@
-import React, {  useState } from 'react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import Text from '../Text';
 
-const Input = React.forwardRef((props, ref) => {
-    const [value, setValue] = useState('');
+const Input = (props) => {
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = (data) => console.log(data)
 
     return (
-        <input
-            name={props.name}
-            ref={ref}
-            type={props.type}
-            maxlenght={props.maxlenght}
-            placreholder={props.placreholder}
-            onChange={(e) => setValue(e.target.value)}
-            value={value}
-        />
+        <>
+            <Text.p text={props.label} />
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <input
+                    name={props.name}
+                    type={props.type}
+                    ref={register({require: true})}
+                    placeholder={props.placeholder}
+                    maxLength={props.maxLength}
+                />
+            </form>
+        </>
     )
-});
+};
 
 export default Input    

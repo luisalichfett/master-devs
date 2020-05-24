@@ -4,6 +4,7 @@ import h3 from './h3';
 import h4 from './h4';
 import h5 from './h5';
 import h6 from './h6';
+import p from './p';
 
 export default {
     h1,
@@ -11,5 +12,6 @@ export default {
     h3,
     h4,
     h5,
-    h6
+    h6,
+    p
 }
