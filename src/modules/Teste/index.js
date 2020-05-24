@@ -12,4 +12,4 @@ const Teste = () => {
     )
 };
 
-export default Texte;
+export default Teste;

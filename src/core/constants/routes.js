@@ -1,7 +1,9 @@
 const main = '/';
 const login = '/login';
+const test = '/teste';
 
 export default {
     login,
-    main
+    main,
+    test
 }
