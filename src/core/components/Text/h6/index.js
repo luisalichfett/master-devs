@@ -1,7 +1,7 @@
 import React from 'react';
 
 const h6 = (props) => (
-    <h1>{props.text}</h1>
+    <h6>{props.text}</h6>
 );
 
 export default h6

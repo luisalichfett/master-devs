@@ -1,7 +1,7 @@
 import React from 'react';
 
 const h5 = (props) => (
-    <h1>{props.text}</h1>
+    <h5>{props.text}</h5>
 );
 
 export default h5

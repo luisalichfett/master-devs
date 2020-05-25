@@ -1,28 +1,24 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
 import Text from '../../core/components/Text';
 import Input from '../../core/components/Input';
+import Background from '../../core/components/Background';
 import './index.css';
+import { useLogin } from './hook';
 
 const Login = () => {
-    const { register, handleSubmit, getValues } = useForm();
-
-    const onSubmit = () => {
-        const { values } = getValues();
-
-        console.log(values)
-    }
+    const login = useLogin();
 
     return (
-        <div className="title">
-            <Text.h1 text="Login" color="blue" />
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <Input 
-                    type="text"
-                    ref={register({require: true})}
-                    name="username"
-                />
-            </form>
+        <div className="content">
+            <Background opacity="opacity" />
+            <div className="title" >
+                <Text.h1 text="Bug:" />
+                <Text.h1 text="The Kingdom of Terror!" />
+            </div>
+            <div className="input">
+                <Text.h1 text="Username:" />
+                <Input name="username" maxLenght={10} />
+            </div>
         </div>
     )
 };
