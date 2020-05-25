@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 450px;
+    width: 240px;
     justify-content: space-evenly;
 }
 
-.input {
+input {
     background: none;
     height: 32px;
     border-width: 0 0 3px;

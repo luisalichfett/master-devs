@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: 'JackPirate';
+}
+
+@font-face {
+  font-family: 'JackPirate';
+  src: url('../../core/assets/fonts/JackPirate/jackpirate_personal_use_only-webfont.eot');
+  src: url('../../core/assets/fonts/JackPirate/jackpirate_personal_use_only-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../../core/assets/fonts/JackPirate/jackpirate_personal_use_only-webfont.woff2') format('woff2'),
+       url('../../core/assets/fonts/JackPirate/jackpirate_personal_use_only-webfont.woff') format('woff'),
+       url('../../core/assets/fonts/JackPirate/jackpirate_personal_use_only-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
