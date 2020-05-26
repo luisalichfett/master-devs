@@ -1,13 +1,15 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { postLogin } from '../../core/providers/login';
 
 export const useLogin = () => {
+    const [responseData, setResponseData] = useState()
     
     const loadLogin = useCallback((login) => {
-        postLogin(login)
+        setResponseData(undefined)
+        postLogin(login).then(data => setResponseData(data))
     }, [postLogin])
     
-    return {loadLogin}
+    return {loadLogin, responseData}
 };
 
 export default useLogin;

@@ -3,10 +3,11 @@ import { useForm } from 'react-hook-form';
 import Text from '../Text';
 import './index.css'
 import useLogin from '../../../modules/Login/hook';
+import { useHistory } from 'react-router-dom';
 
 const Input = (props) => {
-    const {loadLogin} = useLogin();
-    console.log(loadLogin)
+    const history = useHistory();
+    const {loadLogin, responseData} = useLogin();
     const { register, handleSubmit } = useForm();
     const [value, setValue] = useState('');
 
@@ -16,6 +17,12 @@ const Input = (props) => {
             loadLogin(value)
         }
     }, [loadLogin, value])
+
+    useEffect(() => {
+        if (responseData) {
+            history.replace('/game')
+        }
+    }, [responseData])
 
     const onSubmit = (data) => setValue(data)
 

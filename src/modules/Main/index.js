@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter as Router, Redirect } from 'react-router-d
 import routes from '../../core/constants/routes';
 import './index.css';
 import Login from '../Login';
+import Teste from '../Teste';
 
 const Main = () => (
   <div>
@@ -10,6 +11,7 @@ const Main = () => (
       <Switch>
         <Redirect exact from={routes.main} to={routes.login} />
           <Route path={routes.login} component={Login} />
+          <Route path={routes.test} component={Teste} />
       </Switch>
     </Router>
   </div>
