@@ -1,0 +1,3 @@
+src/**/__tests__/**
+src/unit-test/**
+src/serviceWorker.js

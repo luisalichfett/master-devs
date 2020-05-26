@@ -3,7 +3,7 @@ const login = '/login';
 const test = '/teste';
 
 export default {
-    login,
-    main,
-    test
-}
+  login,
+  main,
+  test,
+};
