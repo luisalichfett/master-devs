@@ -1,0 +1,26 @@
+.topbar {
+    position: fixed;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    background: black;
+    box-shadow: 0 20px 40px #11171e;
+    display: flex;
+    justify-content: center;
+}
+
+.bug {
+    position: relative;
+    margin-top: -200px;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background: black;
+    box-shadow: 0 30px 60px #11171e;
+}
+
+.bug img {
+    padding-top: 100px;
+    padding-left: 25px;
+    height: 300px;
+}

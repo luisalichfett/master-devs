@@ -1,0 +1,41 @@
+.content {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footbar {
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background: #08101e;
+    box-shadow: 0 -10px 60px #b2caee;
+    display: flex;
+    justify-content: center;
+}
+
+.player {
+    position: relative;
+    margin-top: -100px;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background: #08101e;
+    display: flex;
+    justify-content: center;
+}
+
+.player-shadow {
+    position: fixed;
+    bottom: -200px;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    box-shadow: 0 -10px 60px #b2caee;
+}
+
+.player img {
+    height: 700px;
+    padding-right: 125px;
+}

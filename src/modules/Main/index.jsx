@@ -8,6 +8,7 @@ import {
 import routes from 'core/constants/routes';
 import './index.css';
 import Login from 'modules/Login';
+import Game from 'modules/Game';
 import Teste from 'modules/Teste';
 
 const Main = () => (
@@ -16,6 +17,7 @@ const Main = () => (
       <Switch>
         <Redirect exact from={routes.main} to={routes.login} />
         <Route path={routes.login} component={Login} />
+        <Route path={routes.game} component={Game} />
         <Route path={routes.test} component={Teste} />
       </Switch>
     </Router>

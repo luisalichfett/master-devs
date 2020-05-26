@@ -1,5 +1,8 @@
 body {
   margin: 0;
+  background: url("../../core/assets/img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
   font-family: 'JackPirate';
 }
 
