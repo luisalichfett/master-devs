@@ -1,10 +1,11 @@
-const request = require('request')
+const apiHeaders = new Headers();
 
-export const loadLogin = () => {
-    return request('http://www.google', (error, response, body) => {
-        if (!error && response.statusCode === 200) {
-            console.log(body)
-        }
-    })
-}
-export default loadLogin
+apiHeaders.append("Content-Type", "application/json")
+
+export const postLogin = (login) => 
+    fetch(
+        "http://d784ad93.ngrok.io/player/login",
+        {method: "POST", headers: apiHeaders, body: JSON.stringify(login)
+    }).then((response) => response.json)
+
+export default postLogin;
