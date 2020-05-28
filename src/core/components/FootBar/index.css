@@ -1,4 +1,4 @@
-.content {
+.content-footbar {
     margin: 0;
     display: flex;
     justify-content: center;
@@ -38,4 +38,39 @@
 .player img {
     height: 700px;
     padding-right: 125px;
+}
+
+.info-player {
+    color: white;
+    position: fixed;
+    font-size: 40px;
+    bottom: -65px;
+    right: 500px
+}
+
+.cards-player img {
+    padding-top: 15px;
+    right: 385px;
+    position: fixed;
+    height: 70px;
+}
+
+.choose-card-player {
+    position: fixed;
+    font-size: 40px;
+    bottom: -35px;
+    right: 150px
+}
+
+.play .choose-card-player{
+    visibility: hidden;
+}
+
+.play:hover .choose-card-player{
+    color: #ffd83b;  
+    visibility: visible;
+}
+
+.play:hover img {
+    transform: scale(1.1);
 }

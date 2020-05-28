@@ -4,7 +4,7 @@
     height: 100px;
     width: 100%;
     background: black;
-    box-shadow: 0 20px 40px #11171e;
+    box-shadow: 0 20px 60px #11171e;
     display: flex;
     justify-content: center;
 }
@@ -16,11 +16,26 @@
     width: 400px;
     border-radius: 50%;
     background: black;
-    box-shadow: 0 30px 60px #11171e;
+    box-shadow: 0 20px 60px #11171e;
 }
 
 .bug img {
     padding-top: 100px;
     padding-left: 25px;
     height: 300px;
+}
+
+.info-bug {
+    color: white;
+    position: fixed;
+    font-size: 40px;
+    top: -65px;
+    left: 450px
+}
+
+.cards-bug img {
+    padding-top: 15px;
+    left: 620px;
+    position: fixed;
+    height: 70px;
 }

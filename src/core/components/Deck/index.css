@@ -1,0 +1,36 @@
+.content-deck {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deck-position {
+    position: fixed;
+    top: 48%;
+    right: -200px;
+}
+
+.deck {
+    position: relative;
+    margin-top: -200px;
+    margin-right: 0;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background: linear-gradient(black, #08101e);
+}
+
+.deck:hover {
+    box-shadow: -20px -15px 60px 10px black, -10px 15px 60px 0 #b2caee;
+}
+
+.deck img {
+    padding-top: 50px;
+    padding-left: 50px;
+    height: 300px;
+}
+
+.deck img:hover {
+    transform: scale(1.1);
+}
