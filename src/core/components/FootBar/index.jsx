@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Text from "core/components/Text";
 import Player from "core/assets/img/player.png";
 import Cards from "core/assets/img/deck.png";
 import "./index.css";
 
-const FootBar = (props) => (
+const FootBar = () => (
   <div className="content-footbar">
     <div className="player-shadow" />
     <div className="footbar">
@@ -26,10 +25,5 @@ const FootBar = (props) => (
     </div>
   </div>
 );
-
-FootBar.propTypes = {
-  playerImg: PropTypes.string,
-  playerCardsImg: PropTypes.string,
-};
 
 export default FootBar;

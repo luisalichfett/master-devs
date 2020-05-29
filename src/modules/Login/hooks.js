@@ -8,7 +8,10 @@ export const useLogin = () => {
     (login) => {
       setResponseData(undefined);
       postLogin(login)
-        .then((data) => setResponseData(data))
+        .then((data) => {
+          localStorage.setItem("user", JSON.stringify(data))
+          setResponseData(data)
+        })
         .catch((error) => console.error(error));
     },
     []

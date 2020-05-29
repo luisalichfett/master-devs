@@ -25,7 +25,8 @@
         "jsx": true
       },
       "ecmaVersion": 11,
-      "sourceType": "module"
+      "sourceType": "module",
+      "allowImportExportEverywhere": true
     },
     "plugins": [
       "react",
@@ -55,3 +56,4 @@
       }
     ]
   }
+}
