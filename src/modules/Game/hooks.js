@@ -1,17 +1,17 @@
 import { useCallback, useState } from "react";
 import { getGameData, logoff } from "../../core/providers/game";
 
-export const usePlayer = () => {
-  const [responseData, setResponseData] = useState();
+export const useGame = () => {
+  const [responseLoadGame, setResponseLoadGame] = useState();
 
-  const loadPlayer = useCallback((id) => {
-    setResponseData(undefined);
-    getGameData(id)
-      .then((data) => setResponseData(data))
+  const loadGame = useCallback((playerId) => {
+    setResponseLoadGame(undefined);
+    getGameData(playerId)
+      .then((data) => setResponseLoadGame(data))
       .catch((error) => console.error(error));
   }, []);
 
-  return { loadPlayer, responseData };
+  return { loadGame, responseLoadGame };
 };
 
 export const useEndGame = () => {
@@ -20,14 +20,11 @@ export const useEndGame = () => {
   const endGame = useCallback((id) => {
     setResponseData(undefined);
     logoff(id)
-      .then((data) => {
-          localStorage.clear()
-          setResponseData(data)
-        })
+      .then((data) => localStorage.clear())
       .catch((error) => console.error(error));
   }, []);
 
-  return { endGame, responseData }
+  return { endGame }
 };
 
-export default { usePlayer, useEndGame };
+export default { useGame, useEndGame };

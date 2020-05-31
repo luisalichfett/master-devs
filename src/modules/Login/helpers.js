@@ -5,6 +5,4 @@ export const generateGamePath = (history, id) => {
     pathname: "/game",
     search: params.toString(),
   });
-
-  console.log(history);
 };

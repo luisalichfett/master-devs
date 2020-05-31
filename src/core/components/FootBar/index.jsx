@@ -4,7 +4,7 @@ import Player from "core/assets/img/player.png";
 import Cards from "core/assets/img/deck.png";
 import "./index.css";
 
-const FootBar = () => (
+const FootBar = (props) => (
   <div className="content-footbar">
     <div className="player-shadow" />
     <div className="footbar">
@@ -12,9 +12,9 @@ const FootBar = () => (
         <img alt="player" src={Player} />
       </div>
       <div className="info-player">
-        <Text.h1 text="Player" />
+        <Text.h1 text={props.name} />
       </div>
-      <div className="play">
+      <div className="play" onClick={props.onClick}>
         <div className="choose-card-player">
           <Text.h3 text="Choose card" />
         </div>

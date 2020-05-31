@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import Text from "core/components/Text";
 import Input from "core/components/Input";
 import Background from "core/components/Background";
 import useLogin from "./hooks";
-import { generateGamePath } from "./helpers"
+import { generateGamePath } from "./helpers";
 import "./index.css";
 
 const Login = () => {
@@ -14,14 +14,19 @@ const Login = () => {
 
   useEffect(() => {
     if (value) {
-      loadLogin(value);
+      console.log(value)
+      if (value.nickName.length <= 10) {
+        loadLogin(value);
+      } else {
+        alert("The name must contain until 8 characters!");
+      }
     }
   }, [loadLogin, value]);
 
   useEffect(() => {
     if (responseData) {
-      const id = responseData.content.id.toString();
-      generateGamePath(history, id)
+      const id = responseData.content.player.id.toString();
+      generateGamePath(history, id);
     }
   }, [responseData, history]);
 
