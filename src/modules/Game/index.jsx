@@ -42,10 +42,10 @@ const Game = () => {
   return (
     <div>
       <Background opacity="opacity" />
-      <Deck />
       <TopBar />
       <Modal.PlayerCards openCards={playerTurn} cards={playerCards} />
       <FootBar name={playerName ? playerName : "Player"} onClick={() => setPlayerTurn(true)} />
+      <Deck />
     </div>
   );
 };

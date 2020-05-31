@@ -1,12 +1,12 @@
 import { useCallback, useState } from "react";
-import { getGameData, logoff } from "../../core/providers/game";
+import { getGameData, logoff, getNewCard } from "../../core/providers/game";
 
 export const useGame = () => {
   const [responseLoadGame, setResponseLoadGame] = useState();
 
-  const loadGame = useCallback((playerId) => {
+  const loadGame = useCallback((id) => {
     setResponseLoadGame(undefined);
-    getGameData(playerId)
+    getGameData(id)
       .then((data) => setResponseLoadGame(data))
       .catch((error) => console.error(error));
   }, []);
@@ -24,7 +24,21 @@ export const useEndGame = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  return { endGame }
+  return { endGame };
 };
 
-export default { useGame, useEndGame };
+export const useDeck = () => {
+  const [responseNewCard, setResponseNewCard] = useState();
+
+  const newCard = useCallback(() => {
+    setResponseNewCard(undefined);
+    getNewCard()
+      .then((data) => setResponseNewCard(data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  return { newCard, responseNewCard };
+};
+
+export default { useGame, useEndGame, useDeck };
+

@@ -1,0 +1,33 @@
+.card {
+    position: relative;
+    color: black;
+    background: #f7f2e7;
+    height: 600px;
+    width: 400px;
+    border: transparent;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 15px 0 15px;
+  }
+  
+  
+  .card:hover {
+      background: white;
+      box-shadow: 0 0 60px #b2caee;
+  }
+  
+  .damage {
+      color: blue;
+  }
+  
+  .gain {
+      color: green;
+  }
+  
+  .cost {
+      color: red;
+  }

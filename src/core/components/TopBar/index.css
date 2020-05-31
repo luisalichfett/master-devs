@@ -1,41 +1,54 @@
 .topbar {
-    position: fixed;
-    top: 0;
-    height: 100px;
-    width: 100%;
-    background: black;
-    box-shadow: 0 20px 60px #11171e;
-    display: flex;
-    justify-content: center;
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  background: black;
+  box-shadow: 0 20px 60px #11171e;
+  display: flex;
+  justify-content: center;
+  font-family: 'JackPirate';
 }
 
 .bug {
-    position: relative;
-    margin-top: -200px;
-    height: 400px;
-    width: 400px;
-    border-radius: 50%;
-    background: black;
-    box-shadow: 0 20px 60px #11171e;
+  position: relative;
+  margin-top: -200px;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background: black;
+  box-shadow: 0 20px 60px #11171e;
 }
 
 .bug img {
-    padding-top: 100px;
-    padding-left: 25px;
-    height: 300px;
+  padding-top: 100px;
+  padding-left: 25px;
+  height: 300px;
 }
 
 .info-bug {
-    color: white;
-    position: fixed;
-    font-size: 40px;
-    top: -65px;
-    left: 450px
+  color: white;
+  position: fixed;
+  font-size: 40px;
+  top: -65px;
+  left: 450px;
 }
 
 .cards-bug img {
-    padding-top: 15px;
-    left: 620px;
-    position: fixed;
-    height: 70px;
+  padding-top: 15px;
+  left: 620px;
+  position: fixed;
+  height: 70px;
+}
+
+@font-face {
+  font-family: "JackPirate";
+  src: url("../../assets/fonts/JackPirate/jackpirate.eot");
+  src: url("../../assets/fonts/JackPirate/jackpirate.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/JackPirate/jackpirate.woff2") format("woff2"),
+    url("../../assets/fonts/JackPirate/jackpirate.woff") format("woff"),
+    url("../../assets/fonts/JackPirate/jackpirate.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
