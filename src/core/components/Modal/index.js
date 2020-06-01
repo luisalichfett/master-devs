@@ -1,3 +1,4 @@
 import PlayerCards from './PlayerCards';
+import Rules from './Rules';
 
-export default { PlayerCards };
+export default { PlayerCards, Rules };

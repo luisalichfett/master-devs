@@ -7,13 +7,7 @@ const Teste = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   return (
     <div className="Teste">
-      <button onClick={() => setIsModalVisible(true)}>Teste</button>
-      {isModalVisible ? (
-        <Modal onClose={() => setIsModalVisible(false)}>
-          {' '}
-          <Text.h2>Modal Teste</Text.h2>
-        </Modal>
-      ) : null}
+        <Modal.Rules/>
     </div>
   );
 };
