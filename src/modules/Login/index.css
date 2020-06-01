@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     color: white;
+    font-family: 'JackPirate';
 }
 
 .input h1 {
@@ -25,3 +26,14 @@
     flex-direction: row;
 }
 
+@font-face {
+    font-family: 'JackPirate';
+    src: url('../../core/assets/fonts/JackPirate/jackpirate.eot');
+    src: url('../../core/assets/fonts/JackPirate/jackpirate.eot?#iefix') format('embedded-opentype'),
+         url('../../core/assets/fonts/JackPirate/jackpirate.woff2') format('woff2'),
+         url('../../core/assets/fonts/JackPirate/jackpirate.woff') format('woff'),
+         url('../../core/assets/fonts/JackPirate/jackpirate.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  
+  }

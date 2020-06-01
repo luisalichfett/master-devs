@@ -3,18 +3,7 @@ body {
   background: url("../../core/assets/img/background.jpg");
   background-repeat: no-repeat;
   background-size: auto;
-  font-family: 'Chomsky';
 }
 
-@font-face {
-  font-family: 'Chomsky';
-  src: url('../../core/assets/fonts/Chomsky/chomsky.eot');
-  src: url('../../core/assets/fonts/Chomsky/chomsky.eot?#iefix') format('embedded-opentype'),
-       url('../../core/assets/fonts/Chomsky/chomsky.woff2') format('woff2'),
-       url('../../core/assets/fonts/Chomsky/chomsky.woff') format('woff'),
-       url('../../core/assets/fonts/Chomsky/chomsky.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 
-}
 

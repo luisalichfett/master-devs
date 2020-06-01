@@ -14,7 +14,6 @@ const Login = () => {
 
   useEffect(() => {
     if (value) {
-      console.log(value)
       if (value.nickName.length <= 10) {
         loadLogin(value);
       } else {
@@ -34,7 +33,7 @@ const Login = () => {
     <div className="content-login">
       <Background opacity="opacity" />
       <div className="title">
-        <Text.h1 text="Bug:" />
+        <Text.h1 text="Bug:" id="title" />
         <Text.h1 text="The Kingdom of Terror!" />
       </div>
       <div className="input">

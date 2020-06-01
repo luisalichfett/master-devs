@@ -1,76 +1,89 @@
 .content-footbar {
-    margin: 0;
-    display: flex;
-    justify-content: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-family: "JackPirate";
 }
 
 .footbar {
-    position: fixed;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-    background: #08101e;
-    box-shadow: 0 -10px 60px #b2caee;
-    display: flex;
-    justify-content: center;
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background: #08101e;
+  box-shadow: 0 -10px 60px #b2caee;
+  display: flex;
+  justify-content: center;
 }
 
 .player {
-    position: relative;
-    margin-top: -100px;
-    height: 400px;
-    width: 400px;
-    border-radius: 50%;
-    background: #08101e;
-    display: flex;
-    justify-content: center;
+  position: relative;
+  margin-top: -100px;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background: #08101e;
+  display: flex;
+  justify-content: center;
 }
 
 .player-shadow {
-    position: fixed;
-    bottom: -200px;
-    height: 400px;
-    width: 400px;
-    border-radius: 50%;
-    box-shadow: 0 -10px 60px #b2caee;
+  position: fixed;
+  bottom: -200px;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  box-shadow: 0 -10px 60px #b2caee;
 }
 
 .player img {
-    height: 700px;
-    padding-right: 125px;
+  height: 700px;
+  padding-right: 125px;
 }
 
 .info-player {
-    color: white;
-    position: fixed;
-    font-size: 40px;
-    bottom: -65px;
-    right: 500px
+  color: white;
+  position: fixed;
+  font-size: 40px;
+  bottom: -65px;
+  right: 500px;
 }
 
 .cards-player img {
-    padding-top: 15px;
-    right: 385px;
-    position: fixed;
-    height: 70px;
+  padding-top: 15px;
+  right: 385px;
+  position: fixed;
+  height: 70px;
 }
 
 .choose-card-player {
-    position: fixed;
-    font-size: 40px;
-    bottom: -35px;
-    right: 150px
+  position: fixed;
+  font-size: 40px;
+  bottom: -35px;
+  right: 150px;
 }
 
-.play .choose-card-player{
-    visibility: hidden;
+.play .choose-card-player {
+  visibility: hidden;
 }
 
-.play:hover .choose-card-player{
-    color: #ffd83b;  
-    visibility: visible;
+.play:hover .choose-card-player {
+  color: #ffd83b;
+  visibility: visible;
 }
 
 .play:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+@font-face {
+  font-family: "JackPirate";
+  src: url("../../assets/fonts/JackPirate/jackpirate.eot");
+  src: url("../../assets/fonts/JackPirate/jackpirate.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/JackPirate/jackpirate.woff2") format("woff2"),
+    url("../../assets/fonts/JackPirate/jackpirate.woff") format("woff"),
+    url("../../assets/fonts/JackPirate/jackpirate.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
