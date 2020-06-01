@@ -123,3 +123,15 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Chomsky";
+  src: url("../../assets/fonts/Chomsky/chomsky.eot");
+  src: url("../../assets/fonts/Chomsky/chomsky.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/Chomsky/chomsky.woff2") format("woff2"),
+    url("../../assets/fonts/Chomsky/chomsky.woff") format("woff"),
+    url("../../assets/fonts/Chomsky/chomsky.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

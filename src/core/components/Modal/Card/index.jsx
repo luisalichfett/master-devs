@@ -10,23 +10,39 @@ const Card = (props) =>
       <div className="card-title">
         <Text.h1 text={card.title} />
       </div>
-      <Text.h3 text={card.description} />
-      {console.log(props.cards)}
-      {card.lifeDamage && (
-        <div className="damage">
-          <Text.h4 text={"Bug damage: " + card.lifeDamage} />
-        </div>
-      )}
-      {card.cost && (
-        <div className="cost">
-          <Text.h4 text={"Mana Cost: " + card.cost} />
-        </div>
-      )}
-      {card.passive && (
-        <div className="gain">
-          <Text.h4 text={"Mana Gain: " + card.passive} />
-        </div>
-      )}
+      <div className="card-info">
+        <Text.h3 text={card.description} />
+        {card.lifeDamage && (
+          <div className="damage">
+            <div className="damage-text">
+              <Text.h2 text={"Bug damage: "} />
+            </div>
+            <div className="damage-value">
+              <Text.h2 text={card.lifeDamage} />
+            </div>
+          </div>
+        )}
+        {card.cost && (
+          <div className="cost">
+            <div className="cost-text">
+              <Text.h2 text={"Mana Cost: "} />
+            </div>
+            <div className="cost-value">
+              <Text.h2 text={card.cost} />
+            </div>
+          </div>
+        )}
+        {card.passive && (
+          <div className="gain">
+            <div className="gain-text">
+              <Text.h2 text={"Mana Gain: "} />
+            </div>
+            <div className="gain-value">
+              <Text.h2 text={card.passive} />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   ));
 
