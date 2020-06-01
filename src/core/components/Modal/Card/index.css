@@ -1,10 +1,10 @@
 .card {
     position: relative;
-    color: black;
-    background: #f7f2e7;
+    color: white;
+    background: black;
     height: 600px;
     width: 400px;
-    border: transparent;
+    border: 2px white solid;
     border-radius: 5px;
     box-sizing: border-box;
     display: flex;
@@ -16,18 +16,33 @@
   
   
   .card:hover {
-      background: white;
       box-shadow: 0 0 60px #b2caee;
+  }
+
+  .card-title {
+      font-family: "JackPirate";
   }
   
   .damage {
-      color: blue;
+      color: #45c0e7;
   }
   
   .gain {
-      color: green;
+      color: #00ea92;
   }
   
   .cost {
-      color: red;
+      color: #ed454e;
+  }
+
+  @font-face {
+    font-family: "JackPirate";
+    src: url("../../../assets/fonts/JackPirate/jackpirate.eot");
+    src: url("../../../assets/fonts/JackPirate/jackpirate.eot?#iefix")
+        format("embedded-opentype"),
+      url("../../../assets/fonts/JackPirate/jackpirate.woff2") format("woff2"),
+      url("../../../assets/fonts/JackPirate/jackpirate.woff") format("woff"),
+      url("../../../assets/fonts/JackPirate/jackpirate.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
   }

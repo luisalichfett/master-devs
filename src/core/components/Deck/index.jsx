@@ -8,7 +8,6 @@ const Deck = () => {
   const [deck, openDeck] = useState(false);
   const { newCard, responseNewCard } = useDeck();
   const [withdrawnCard, setWithDrawnCard] = useState(-1);
-  const [noMoreCards, setNoMoreCards] = useState(false);
 
   useEffect(() => {
     newCard();
@@ -19,13 +18,6 @@ const Deck = () => {
     setWithDrawnCard(withdrawnCard + 1);
   };
 
-  useEffect(() => {
-    if (withdrawnCard > responseNewCard?.content.juniorCards.length - 1) {
-      alert("There are no more cards in the deck!");
-      setNoMoreCards(true);
-    }
-  }, [withdrawnCard]);
-
   return !deck ? (
     <div className="content-deck" onClick={handleClick}>
       <div className="deck-position">
@@ -34,7 +26,7 @@ const Deck = () => {
         </div>
       </div>
     </div>
-  ) : !noMoreCards ? (
+  ) : (
     <div onClick={() => openDeck(false)}>
       <div className="background" />
       <div className="cards">
@@ -43,8 +35,6 @@ const Deck = () => {
         />
       </div>
     </div>
-  ) : (
-    <div></div>
   );
 };
 

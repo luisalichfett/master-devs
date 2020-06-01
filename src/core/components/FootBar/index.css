@@ -2,7 +2,6 @@
   margin: 0;
   display: flex;
   justify-content: center;
-  font-family: "JackPirate";
 }
 
 .footbar {
@@ -42,37 +41,135 @@
 }
 
 .info-player {
+  position: fixed;
+  font-size: 40px;
+  left: 0;
+  bottom: -45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.nickname {
   color: white;
-  position: fixed;
-  font-size: 40px;
-  bottom: -65px;
-  right: 500px;
+  margin-left: 540px;
+  font-family: "JackPirate";
 }
 
-.cards-player img {
-  padding-top: 15px;
-  right: 385px;
-  position: fixed;
-  height: 70px;
+.life {
+  color: #fee899;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 50px;
+  width: 300px;
 }
 
-.choose-card-player {
-  position: fixed;
-  font-size: 40px;
-  bottom: -35px;
-  right: 150px;
+.life img {
+  height: 110px;
+  width: auto;
+  margin-right: 5px;
 }
 
-.play .choose-card-player {
+.life-text {
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.life-text-title {
+  font-family: "JackPirate";
+}
+
+.life-text-value {
+  font-family: "Chomsky";
+  margin-left: 10px;
+}
+
+.mana {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 300px;
+  color: #befffa;
+  margin-left: 30px;
+}
+
+.mana img {
+  height: 100px;
+  width: auto;
+  margin-right: 5px;
+}
+
+.mana-text {
+  width: 170px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mana-text-title {
+  font-family: "JackPirate";
+}
+
+.mana-text-value {
+  font-family: "Chomsky";
+  margin-left: 10px;
+}
+
+.play {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 300px;
+  margin-left: 80px;
+  font-family: "JackPirate";
+}
+
+.play .play-text {
   visibility: hidden;
 }
 
-.play:hover .choose-card-player {
-  color: #ffd83b;
+.play:hover .play-text {
+  color: #e5e5e5;
   visibility: visible;
 }
 
+.play img {
+  height: 70px;
+  margin-right: 20px;
+}
+
 .play:hover img {
+  transform: scale(1.1);
+}
+
+.pass-turn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 500px;
+  margin-left: 50px;
+  font-family: "JackPirate";
+}
+
+.pass-turn .pass-text {
+  visibility: hidden;
+}
+
+.pass-turn:hover .pass-text {
+  color: #00ea92;
+  visibility: visible;
+}
+
+.pass-turn img {
+  height: 100px;
+  margin-right: 5px;
+}
+
+.pass-turn:hover img {
   transform: scale(1.1);
 }
 
@@ -84,6 +181,18 @@
     url("../../assets/fonts/JackPirate/jackpirate.woff2") format("woff2"),
     url("../../assets/fonts/JackPirate/jackpirate.woff") format("woff"),
     url("../../assets/fonts/JackPirate/jackpirate.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chomsky";
+  src: url("../../assets/fonts/Chomsky/chomsky.eot");
+  src: url("../../assets/fonts/Chomsky/chomsky.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/Chomsky/chomsky.woff2") format("woff2"),
+    url("../../assets/fonts/Chomsky/chomsky.woff") format("woff"),
+    url("../../assets/fonts/Chomsky/chomsky.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

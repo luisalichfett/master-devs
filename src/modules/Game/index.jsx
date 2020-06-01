@@ -13,10 +13,14 @@ const Game = () => {
   const history = useHistory();
   const { endGame } = useEndGame();
   const { loadGame, responseLoadGame } = useGame();
-  const [playerCards, setPlayerCards] = useState([]);
-  const [playerName, setPlayerName] = useState("");
   const [playerTurn, setPlayerTurn] = useState(false);
+  const [playerName, setPlayerName] = useState("");
+  const [playerCards, setPlayerCards] = useState([]);
+  const [playerLife, setPlayerLife] = useState(0);
+  const [playerMana, setPlayerMana] = useState(0);
   const [bugCards, setBugCards] = useState([]);
+  const [bugLife, setBugLife] = useState(0);
+  const [bugMana, setBugMana] = useState(0);
   const id = generatePlayerId(history);
 
   useEffect(() => {
@@ -33,19 +37,29 @@ const Game = () => {
 
   useEffect(() => {
     if (responseLoadGame) {
+      console.log(responseLoadGame);
       setPlayerCards(responseLoadGame?.content?.player.cards);
-      setBugCards(responseLoadGame?.content?.bug.cards);
       setPlayerName(responseLoadGame?.content?.player.nickName);
+      setPlayerLife(responseLoadGame?.content?.player.life);
+      setPlayerMana(responseLoadGame?.content?.player.mana);
+      setBugCards(responseLoadGame?.content?.bug.cards);
+      setBugLife(responseLoadGame?.content?.bug.life);
+      setBugMana(responseLoadGame?.content?.bug.mana);
     }
   });
 
   return (
     <div>
       <Background opacity="opacity" />
-      <TopBar />
-      <Modal.PlayerCards openCards={playerTurn} cards={playerCards} />
-      <FootBar name={playerName ? playerName : "Player"} onClick={() => setPlayerTurn(true)} />
+      <TopBar life={bugLife ? bugLife : ""} mana={bugMana ? bugMana : ""} />
       <Deck />
+      <Modal.PlayerCards openCards={playerTurn} cards={playerCards} />
+      <FootBar
+        name={playerName ? playerName : "Player"}
+        play={() => setPlayerTurn(!playerTurn)}
+        life={playerLife ? playerLife : ""}
+        mana={playerMana ? playerMana : ""}
+      />
     </div>
   );
 };

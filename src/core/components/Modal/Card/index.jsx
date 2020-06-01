@@ -7,7 +7,9 @@ const Card = (props) =>
   props.cards &&
   map(props.cards, (card) => (
     <div id={card.id} className="card">
-      <Text.h1 text={card.title} />
+      <div className="card-title">
+        <Text.h1 text={card.title} />
+      </div>
       <Text.h3 text={card.description} />
       {console.log(props.cards)}
       {card.lifeDamage && (
@@ -28,4 +30,21 @@ const Card = (props) =>
     </div>
   ));
 
-export default Card
+export default Card;
+
+{
+  /* <div id="card" className="card">
+<Text.h1 text="Title" />
+<Text.h3 text="Description" />
+  <div className="damage">
+    <Text.h4 text= "Bug damage: 7" />
+  </div>
+  <div className="cost">
+    <Text.h4 text="Mana Cost: 6" />
+  </div>
+  <div className="gain">
+    <Text.h4 text="Mana Gain: 5" />
+  </div>
+</div>
+); */
+}

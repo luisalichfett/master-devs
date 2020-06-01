@@ -7,7 +7,6 @@
   box-shadow: 0 20px 60px #11171e;
   display: flex;
   justify-content: center;
-  font-family: 'JackPirate';
 }
 
 .bug {
@@ -27,18 +26,90 @@
 }
 
 .info-bug {
-  color: white;
   position: fixed;
   font-size: 40px;
-  top: -65px;
-  left: 450px;
+  right: 0;
+  top: -40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.bugname {
+  color: white;
+  margin-left: 70px;
+  font-family: "JackPirate";
+}
+
+.life-bug {
+  color: #ed454e;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 300px;
+  margin-left: 530px;
+}
+
+.life-bug img {
+  height: 110px;
+  width: auto;
+}
+
+.life-bug-text {
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.life-bug-text-title {
+  font-family: "JackPirate";
+}
+
+.life-bug-text-value {
+  font-family: "Chomsky";
+  margin-left: 10px;
 }
 
 .cards-bug img {
-  padding-top: 15px;
-  left: 620px;
-  position: fixed;
   height: 70px;
+  margin-left: 430px;
+}
+
+.mana-bug {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 300px;
+  color: #5462ea;
+}
+
+.mana-bug img {
+  height: 100px;
+  width: auto;
+  margin-right: 5px;
+}
+
+.mana-bug-text {
+  width: 170px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mana-bug-text-title {
+  font-family: "JackPirate";
+}
+
+.mana-bug-text-value {
+  font-family: "Chomsky";
+  margin-left: 10px;
+}
+
+.cards-bug img {
+  height: 70px;
+  margin-left: 460px;
 }
 
 @font-face {
