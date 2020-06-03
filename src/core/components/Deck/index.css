@@ -8,11 +8,12 @@
 .deck-position {
   position: fixed;
   top: 48%;
-  right: -200px;
+  left: 1680px;
+  display: flex;
+  width: 100%;
 }
 
 .deck {
-  position: relative;
   margin-top: -200px;
   margin-right: 0;
   height: 400px;
@@ -23,16 +24,13 @@
 
 .deck:hover {
   box-shadow: -20px -15px 60px 10px black, -10px 15px 60px 0 #b2caee;
+  transform: scale(1.1);
 }
 
 .deck img {
   padding-top: 50px;
   padding-left: 50px;
   height: 300px;
-}
-
-.deck img:hover {
-  transform: scale(1.1);
 }
 
 .background {

@@ -9,7 +9,9 @@ import "./index.css";
 
 const FootBar = (props) => (
   <div className="content-footbar">
-    <div className="player-shadow" />
+    <div className="player-shadow-container">
+      <div className="player-shadow" />
+    </div>
     <div className="footbar">
       <div className="player">
         <img alt="player" src={Player} />
@@ -22,7 +24,7 @@ const FootBar = (props) => (
               <Text.h3 text={"Mana: "} />
             </div>
             <div className="mana-text-value">
-              <Text.h3 text={props.mana} />
+              <Text.h3 text={props.mana.toString()} />
             </div>
           </div>
         </div>
@@ -33,7 +35,7 @@ const FootBar = (props) => (
               <Text.h3 text={"Life: "} />
             </div>
             <div className="life-text-value">
-              <Text.h3 text={props.life} />
+              <Text.h3 text={props.life.toString()} />
             </div>
           </div>
         </div>

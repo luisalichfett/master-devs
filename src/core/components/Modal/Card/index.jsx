@@ -1,47 +1,51 @@
 import React from "react";
 import map from "lodash/map";
 import Text from "core/components/Text";
+import CardFront from "core/assets/img/card-front.png";
 import "./index.css";
 
 const Card = (props) =>
   props.cards &&
   map(props.cards, (card) => (
-    <div id={card.id} className="card">
-      <div className="card-title">
-        <Text.h1 text={card.title} />
-      </div>
+    <div id={card.id} className="card" onClick={() => props.onClick(card)}>
+      <img src={CardFront} />
       <div className="card-info">
-        <Text.h3 text={card.description} />
         {card.lifeDamage && (
           <div className="damage">
             <div className="damage-text">
-              <Text.h2 text={"Bug damage: "} />
+              <Text.h1 text={"Bug damage: "} />
             </div>
             <div className="damage-value">
-              <Text.h2 text={card.lifeDamage} />
+              <Text.h1 text={card.lifeDamage.toString()} />
             </div>
           </div>
         )}
         {card.cost && (
           <div className="cost">
             <div className="cost-text">
-              <Text.h2 text={"Mana Cost: "} />
+              <Text.h1 text={"Mana Cost: "} />
             </div>
             <div className="cost-value">
-              <Text.h2 text={card.cost} />
+              <Text.h1 text={card.cost.toString()} />
             </div>
           </div>
         )}
         {card.passive && (
           <div className="gain">
             <div className="gain-text">
-              <Text.h2 text={"Mana Gain: "} />
+              <Text.h1 text={"Mana Gain: "} />
             </div>
             <div className="gain-value">
-              <Text.h2 text={card.passive} />
+              <Text.h1 text={card.passive.toString()} />
             </div>
           </div>
         )}
+      </div>
+      <div className="card-title">
+        <Text.h2 text={card.title} />
+      </div>
+      <div className="card-description">
+        <Text.h4 text={card.description} />
       </div>
     </div>
   ));

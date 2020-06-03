@@ -4,7 +4,7 @@ import FootBar from "core/components/FootBar";
 import TopBar from "core/components/TopBar";
 import Deck from "core/components/Deck";
 import "./index.css";
-import { useGame, useEndGame } from "./hooks";
+import { useGame, useEndGame, useBuyCard } from "./hooks";
 import { useHistory } from "react-router-dom";
 import { generatePlayerId } from "./helpers";
 import Modal from "core/components/Modal";
@@ -13,6 +13,8 @@ const Game = () => {
   const history = useHistory();
   const { endGame } = useEndGame();
   const { loadGame, responseLoadGame } = useGame();
+  const { buyDeckCard, responseBuyDeckCard } = useBuyCard();
+  console.log(responseBuyDeckCard)
   const [playerTurn, setPlayerTurn] = useState(false);
   const [playerName, setPlayerName] = useState("");
   const [playerCards, setPlayerCards] = useState([]);
@@ -37,7 +39,6 @@ const Game = () => {
 
   useEffect(() => {
     if (responseLoadGame) {
-      console.log(responseLoadGame);
       setPlayerCards(responseLoadGame?.content?.player.cards);
       setPlayerName(responseLoadGame?.content?.player.nickName);
       setPlayerLife(responseLoadGame?.content?.player.life);
@@ -48,12 +49,16 @@ const Game = () => {
     }
   });
 
+  const handleBuyCard = (card) => {
+    buyDeckCard(id, card.id)
+  }
+
   return (
     <div>
       <Background opacity="opacity" />
       <TopBar life={bugLife ? bugLife : ""} mana={bugMana ? bugMana : ""} />
-      <Deck />
-      <Modal.PlayerCards openCards={playerTurn} cards={playerCards} />
+      <Deck onClick={(card) => handleBuyCard(card)}/>
+      <Modal.PlayerCards openCards={playerTurn} cards={playerCards} id={id}/>
       <FootBar
         name={playerName ? playerName : "Player"}
         play={() => setPlayerTurn(!playerTurn)}

@@ -1,5 +1,11 @@
 import { useCallback, useState } from "react";
-import { getGameData, logoff, getNewCard } from "../../core/providers/game";
+import {
+  getGameData,
+  logoff,
+  getDeckCards,
+  pickCard,
+  buyCard
+} from "../../core/providers/game";
 
 export const useGame = () => {
   const [responseLoadGame, setResponseLoadGame] = useState();
@@ -15,12 +21,9 @@ export const useGame = () => {
 };
 
 export const useEndGame = () => {
-  const [responseData, setResponseData] = useState();
-
   const endGame = useCallback((id) => {
-    setResponseData(undefined);
     logoff(id)
-      .then((data) => localStorage.clear())
+      .then(() => localStorage.clear())
       .catch((error) => console.error(error));
   }, []);
 
@@ -28,17 +31,42 @@ export const useEndGame = () => {
 };
 
 export const useDeck = () => {
-  const [responseNewCard, setResponseNewCard] = useState();
+  const [responseDeckCards, setResponseDeckCards] = useState();
 
-  const newCard = useCallback(() => {
-    setResponseNewCard(undefined);
-    getNewCard()
-      .then((data) => setResponseNewCard(data))
+  const deckCards = useCallback(() => {
+    setResponseDeckCards(undefined);
+    getDeckCards()
+      .then((data) => setResponseDeckCards(data))
       .catch((error) => console.error(error));
   }, []);
 
-  return { newCard, responseNewCard };
+  return { deckCards, responseDeckCards };
 };
 
-export default { useGame, useEndGame, useDeck };
+export const useThrowCard = () => {
+  const [responseThrowCard, setResponseThrowCard] = useState();
 
+  const throwCard = useCallback((playerId, cardId, bugId) => {
+    setResponseThrowCard(undefined);
+    pickCard(playerId, cardId, bugId)
+      .then((data) => setResponseThrowCard(data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  return { throwCard, responseThrowCard };
+};
+
+export const useBuyCard = () => {
+  const [responseBuyDeckCard, setResponseBuyDeckCard] = useState();
+
+  const buyDeckCard = useCallback((playerId, cardId) => {
+    setResponseBuyDeckCard(undefined);
+    buyCard(playerId, cardId)
+      .then((data) => setResponseBuyDeckCard(data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  return { buyDeckCard, responseBuyDeckCard };
+};
+
+export default { useGame, useEndGame, useThrowCard, useDeck, useBuyCard };

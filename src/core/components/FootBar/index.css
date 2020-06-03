@@ -7,17 +7,18 @@
 .footbar {
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   height: 100px;
   width: 100%;
   background: #08101e;
   box-shadow: 0 -10px 60px #b2caee;
   display: flex;
-  justify-content: center;
 }
 
 .player {
-  position: relative;
   margin-top: -100px;
+  margin-left: 727px;
   height: 400px;
   width: 400px;
   border-radius: 50%;
@@ -26,9 +27,15 @@
   justify-content: center;
 }
 
-.player-shadow {
+.player-shadow-container {
   position: fixed;
   bottom: -200px;
+  left: 0;
+  display: flex;
+}
+
+.player-shadow {
+  margin-left: 727px;
   height: 400px;
   width: 400px;
   border-radius: 50%;

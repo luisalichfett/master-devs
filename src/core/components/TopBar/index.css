@@ -1,22 +1,31 @@
+.content-topbar {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
 .topbar {
   position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   height: 100px;
   width: 100%;
   background: black;
   box-shadow: 0 20px 60px #11171e;
   display: flex;
-  justify-content: center;
 }
 
 .bug {
-  position: relative;
   margin-top: -200px;
+  margin-left: 727px;
   height: 400px;
   width: 400px;
   border-radius: 50%;
   background: black;
   box-shadow: 0 20px 60px #11171e;
+  display: flex;
+  justify-content: center;
 }
 
 .bug img {
@@ -28,8 +37,8 @@
 .info-bug {
   position: fixed;
   font-size: 40px;
-  right: 0;
-  top: -40px;
+  left: 0;
+  bottom: 810px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -54,6 +63,7 @@
 .life-bug img {
   height: 110px;
   width: auto;
+  margin-right: 0;
 }
 
 .life-bug-text {
@@ -83,6 +93,7 @@
   align-items: center;
   width: 300px;
   color: #5462ea;
+  margin-left: 10px;
 }
 
 .mana-bug img {

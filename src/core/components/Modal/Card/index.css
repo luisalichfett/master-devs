@@ -1,40 +1,69 @@
 .card {
-  position: relative;
+  margin-top: 40px;
   color: white;
-  background: black;
-  height: 600px;
-  width: 400px;
-  border: 2px white solid;
-  border-radius: 5px;
+  height: 300px;
+  width: 435px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  text-align: left;
-  justify-content: space-between;
   padding: 0 15px 0 15px;
+  text-align: center;
+  align-items: center;
+}
+
+.card img {
+  position: absolute;
+  margin-top: -40px;
+  height: 600px;
 }
 
 .card:hover {
-  box-shadow: 0 0 60px #b2caee;
+  transform: scale(1.05);
+  -webkit-filter: drop-shadow(10px 10px 20px white) drop-shadow(-10px -10px 20px white);
+  filter: drop-shadow(10px 10px 20px white) drop-shadow(-10px -10px 20px white);
+}
+
+.card:active {
+  transform: scale(1.05);
+  -webkit-filter: drop-shadow(10px 10px 20px #fde599) drop-shadow(-10px -10px 20px #fde599);
+  filter: drop-shadow(10px 10px 20px #fde599) drop-shadow(-10px -10px 20px #fde599);
 }
 
 .card-info {
-    position: relative;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    justify-content: center;
+  position: relative;
+  margin-top: 65px;
+  height: 500px;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.card-description {
+  position: absolute;
+  margin-top: 270px;
+  height: 300px;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card-title {
+  position: absolute;
+  margin-top: 220px;
   font-family: "JackPirate";
   font-size: 20px;
-  text-align: center;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
 }
 
 .damage {
   color: #45c0e7;
+  height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -51,6 +80,7 @@
 
 .gain {
   color: #00ea92;
+  height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -66,7 +96,8 @@
 }
 
 .cost {
-  color: #ed454e;
+  color: #f7f21e;
+  height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;

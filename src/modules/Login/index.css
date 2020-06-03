@@ -13,11 +13,17 @@
 
 .input h1 {
     font-size: 60px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-shadow: -10px -10px 20px black, 10px 10px 20px black;
 }
 
 .title {
     line-height: 40px;
     font-size: 60px;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: black;
+    text-shadow: -10px -10px 20px black, 10px 10px 20px black;
 }
 
 .input {

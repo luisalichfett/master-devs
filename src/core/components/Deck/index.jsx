@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import DeckOfCards from "core/assets/img/deck.png";
-import Modal from "core/components/Modal";
-import "./index.css";
 import { useDeck } from "modules/Game/hooks";
+import Modal from "core/components/Modal";
+import DeckOfCards from "core/assets/img/deck.png";
+import "./index.css";
 
-const Deck = () => {
+const Deck = (props) => {
   const [deck, openDeck] = useState(false);
-  const { newCard, responseNewCard } = useDeck();
+  const { deckCards, responseDeckCards } = useDeck();
   const [withdrawnCard, setWithDrawnCard] = useState(-1);
-
+  
   useEffect(() => {
-    newCard();
-  }, [newCard]);
+    deckCards();
+  }, [deckCards]);
 
   const handleClick = () => {
     openDeck(!deck);
@@ -29,9 +29,10 @@ const Deck = () => {
   ) : (
     <div onClick={() => openDeck(false)}>
       <div className="background" />
-      <div className="cards">
+      <div className="cards" >
         <Modal.Card
-          cards={[responseNewCard?.content.juniorCards[withdrawnCard]]}
+          cards={[responseDeckCards?.content.juniorCards[withdrawnCard]]}
+          onClick={(card) => props.onClick(card)}
         />
       </div>
     </div>
