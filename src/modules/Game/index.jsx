@@ -3,18 +3,18 @@ import Background from "core/components/Background";
 import FootBar from "core/components/FootBar";
 import TopBar from "core/components/TopBar";
 import Deck from "core/components/Deck";
-import "./index.css";
-import { useGame, useEndGame, useBuyCard } from "./hooks";
+import { useGame, useEndGame, useBuyCard, useDeck } from "./hooks";
 import { useHistory } from "react-router-dom";
 import { generatePlayerId } from "./helpers";
 import Modal from "core/components/Modal";
+import "./index.css";
 
 const Game = () => {
   const history = useHistory();
   const { endGame } = useEndGame();
   const { loadGame, responseLoadGame } = useGame();
   const { buyDeckCard, responseBuyDeckCard } = useBuyCard();
-  console.log(responseBuyDeckCard)
+  const { deckCards, responseDeckCards } = useDeck();
   const [playerTurn, setPlayerTurn] = useState(false);
   const [playerName, setPlayerName] = useState("");
   const [playerCards, setPlayerCards] = useState([]);
@@ -50,21 +50,34 @@ const Game = () => {
   });
 
   const handleBuyCard = (card) => {
-    buyDeckCard(id, card.id)
-  }
+    deckCards();
+    buyDeckCard(id, card.id);
+  };
+
+  const handlePlayerTurn = () => {
+    loadGame(id);
+    setPlayerTurn(!playerTurn);
+  };
 
   return (
     <div>
       <Background opacity="opacity" />
-      <TopBar life={bugLife ? bugLife : ""} mana={bugMana ? bugMana : ""} />
-      <Deck onClick={(card) => handleBuyCard(card)}/>
-      <Modal.PlayerCards openCards={playerTurn} cards={playerCards} id={id}/>
-      <FootBar
-        name={playerName ? playerName : "Player"}
-        play={() => setPlayerTurn(!playerTurn)}
-        life={playerLife ? playerLife : ""}
-        mana={playerMana ? playerMana : ""}
-      />
+      <div className="game-content">
+        <TopBar life={bugLife ? bugLife : ""} mana={bugMana ? bugMana : ""} />
+        <Deck onClick={(card) => handleBuyCard(card)} id={id} />
+        <Modal.PlayerCards
+          openCards={playerTurn}
+          cards={playerCards}
+          id={id}
+          closeCards={(close) => setPlayerTurn(close)}
+        />
+        <FootBar
+          name={playerName ? playerName : "Player"}
+          play={() => handlePlayerTurn()}
+          life={playerLife ? playerLife : ""}
+          mana={playerMana ? playerMana : ""}
+        />
+      </div>
     </div>
   );
 };

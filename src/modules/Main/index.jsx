@@ -12,7 +12,7 @@ import Game from 'modules/Game';
 import Teste from 'modules/Teste';
 
 const Main = () => (
-  <div>
+  <div className="main">
     <Router>
       <Switch>
         <Redirect exact from={routes.main} to={routes.login} />

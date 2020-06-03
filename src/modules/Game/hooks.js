@@ -5,7 +5,7 @@ import {
   getDeckCards,
   pickCard,
   buyCard
-} from "../../core/providers/game";
+} from "core/providers/game";
 
 export const useGame = () => {
   const [responseLoadGame, setResponseLoadGame] = useState();
@@ -46,9 +46,9 @@ export const useDeck = () => {
 export const useThrowCard = () => {
   const [responseThrowCard, setResponseThrowCard] = useState();
 
-  const throwCard = useCallback((playerId, cardId, bugId) => {
+  const throwCard = useCallback((playerId, bugId, cardId) => {
     setResponseThrowCard(undefined);
-    pickCard(playerId, cardId, bugId)
+    pickCard(playerId, bugId, cardId)
       .then((data) => setResponseThrowCard(data))
       .catch((error) => console.error(error));
   }, []);

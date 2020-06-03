@@ -5,10 +5,11 @@ import { useThrowCard } from "modules/Game/hooks";
 
 const PlayerCards = (props) => {
   const { throwCard, responseThrowCard } = useThrowCard();
-  console.log(responseThrowCard)
 
   const handleClick = (card) => {
-    throwCard(props.id, card.id, props.id);
+    throwCard(props.id, props.id, card.id);
+    props.cards.shift(card);
+    props.closeCards(false);
   };
 
   return (

@@ -6,8 +6,8 @@ import "./index.css";
 
 const Card = (props) =>
   props.cards &&
-  map(props.cards, (card) => (
-    <div id={card.id} className="card" onClick={() => props.onClick(card)}>
+  map(props.cards, (card, index) => card ? (
+    <div key={index} id={card.id} className="card" onClick={() => props.onClick(card)}>
       <img src={CardFront} />
       <div className="card-info">
         {card.lifeDamage && (
@@ -48,7 +48,7 @@ const Card = (props) =>
         <Text.h4 text={card.description} />
       </div>
     </div>
-  ));
+  ) : <div>You already have 4 cards!</div>);
 
 export default Card;
 
