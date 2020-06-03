@@ -26,7 +26,11 @@ const Game = () => {
   const id = generatePlayerId(history);
 
   useEffect(() => {
-    loadGame(id);
+    if (responseBuyDeckCard) {
+      loadGame(id);
+      deckCards();
+    }
+    loadGame(id)
   }, [id, loadGame]);
 
   useEffect(() => {
@@ -46,16 +50,15 @@ const Game = () => {
       setBugCards(responseLoadGame?.content?.bug.cards);
       setBugLife(responseLoadGame?.content?.bug.life);
       setBugMana(responseLoadGame?.content?.bug.mana);
+      loadGame(id);
     }
   });
 
   const handleBuyCard = (card) => {
-    deckCards();
     buyDeckCard(id, card.id);
   };
 
   const handlePlayerTurn = () => {
-    loadGame(id);
     setPlayerTurn(!playerTurn);
   };
 
@@ -63,7 +66,7 @@ const Game = () => {
     <div>
       <Background opacity="opacity" />
       <div className="game-content">
-        <TopBar life={bugLife ? bugLife : ""} mana={bugMana ? bugMana : ""} />
+        <TopBar life={bugLife ? bugLife : 0} mana={bugMana ? bugMana : 0} />
         <Deck onClick={(card) => handleBuyCard(card)} id={id} />
         <Modal.PlayerCards
           openCards={playerTurn}
@@ -74,8 +77,8 @@ const Game = () => {
         <FootBar
           name={playerName ? playerName : "Player"}
           play={() => handlePlayerTurn()}
-          life={playerLife ? playerLife : ""}
-          mana={playerMana ? playerMana : ""}
+          life={playerLife ? playerLife : 0}
+          mana={playerMana ? playerMana : 0}
         />
       </div>
     </div>
